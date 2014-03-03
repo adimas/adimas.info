@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>BLOGS</h2>
+
+
+{% for post in latest_blog_list %}
+
+<h2>{{post.title}}</h2>
+
+  <p>{{post.content|safe|linebreaks|urlizetrunc:15|truncatechars:30}}</p>
+  <li><a href="/blog/post/{{ post.id }}/">read more</a></li>
+
+{% endfor %}
+
+{% endblock %}

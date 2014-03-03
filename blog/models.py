@@ -5,7 +5,6 @@ from taggit.managers import TaggableManager
 from adimas import settings
 
 
-
 # Create your models here.
 class Post(models.Model):
     title =models.CharField(max_length=100)

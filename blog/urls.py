@@ -1,10 +1,8 @@
 from django.conf.urls import patterns, include, url
-from django.views.generic import ListView
-from blog.models import Post
+from blog import views
 
 urlpatterns = patterns('',
-   
-    url(r'^', ListView.as_view(
-        queryset=Post.objects.all().order_by("-created")[:2],
-        template_name="blog.html")),
+    
+    url(r'^post/(?P<post_id>\d+)/$', views.blog_post, name='blog_post'),
+    url(r'^$',views.blogs, name='blogs'),
 )

@@ -8,3 +8,4 @@ class MyModelAdmin(MCEFilebrowserAdmin):
     pass
 
 admin.site.register(Post)
+
