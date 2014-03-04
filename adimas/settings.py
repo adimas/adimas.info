@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'django.contrib.comments',
     'tinymce',
     'sorl.thumbnail',
     'taggit',
@@ -94,8 +95,6 @@ TINYMCE_DEFAULT_CONFIG = {
 }
 TINYMCE_FILEBROWSER=False
 
-
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
@@ -113,13 +112,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
-
 STATIC_URL = "/static/"
 MEDIA_URL = "/media/"
 
-TINYMCE_DEFAULT_CONFIG = {
-  'file_browser_callback': 'mce_filebrowser'
-}
 TEMPLATE_DIRS = (
     # The docs say it should be absolute path: PROJECT_PATH is precisely one.
     # Life is wonderful!
@@ -128,12 +123,9 @@ TEMPLATE_DIRS = (
 STATICFILES_DIRS = (
     # The docs say it should be absolute path: PROJECT_PATH is precisely one.
     # Life is wonderful!
-   "/home/geroulia/workspace/adimas/static",
+   "/home/geroulia/workspace/adimas.info/static/",
 )
-CMS_TEMPLATES = (
-    ('template_1.html', 'Template One'),
-    ('template_2.html', 'Template Two'),
-)
+
 LANGUAGES = [
     ('en', 'English'),
 ]

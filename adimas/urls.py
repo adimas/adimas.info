@@ -13,7 +13,8 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^blog/', include('blog.urls')),
-    url(r'^tinymce/', include('tinymce.urls')),
+    url(r'^comments/', include('django.contrib.comments.urls')),
+    #url(r'^tinymce/', include('tinymce.urls')),
 )
 urlpatterns += patterns('', (
         r'^static/(?P<path>.*)$',

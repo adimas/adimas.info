@@ -1,21 +1,23 @@
 {% extends "base.html" %}
+{% load comments %}
+{% get_comment_count for post as comment_count %}
 {% block content %}
 
-<h2>BLOG POST </h2>
+<h2>BLOG ENTRY</h2>
 
-{% if current_blog_post %}
+{% if post %}
+	{% for blog_post in post %}
+	
+	<h2>{{blog_post.title}}</h2>
+	<p>{{blog_post.content|safe|linebreaks}}</p>
 
-	{% for post in current_blog_post %}
-	
-	<h2>{{post.title}}</h2>
-	
-	  <p>{{post.content|safe|linebreaks}}</p>
-	  
+	{% render_comment_form for blog_post %}  
 	
 	{% endfor %}
 {% else %}
-    <p>No blog entry are available.</p>
+    <p>No such blog post entry available.</p>
 {% endif %}
+
 
 
 {% endblock %}
