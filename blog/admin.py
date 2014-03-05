@@ -1,10 +1,9 @@
 from django.contrib import admin
 from django.contrib.admin import site, ModelAdmin
 from blog.models import Post
-from mce_filebrowser.admin import MCEFilebrowserAdmin
-
-class MyModelAdmin(MCEFilebrowserAdmin):
-    pass
+#from mce_filebrowser.admin import MCEFilebrowserAdmin
+#class MyModelAdmin(MCEFilebrowserAdmin):
+    #pass
 
 # we define our resources to add to admin pages
 class CommonMedia:
@@ -15,9 +14,6 @@ class CommonMedia:
     css = {
     'all': ('/static/dojo/editor.css',),
     }
-
-#admin.site.register(Post)
-# Example how to add rich editor capabilities to your models in admin.
-
 # let's add it to this model
 admin.site.register(Post,Media = CommonMedia)
+

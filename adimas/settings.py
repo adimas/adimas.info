@@ -11,17 +11,16 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+
 gettext = lambda s: s
 PROJECT_PATH = os.path.split(os.path.abspath(os.path.dirname(__file__)))[0]
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '^#c-ov(f6^6(5mwjsq29e=krjz(%$a5u4#qa1-s)r49z^n5!ke'
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -42,6 +41,8 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.comments',
     'tinymce',
+    'grappelli',
+    'filebrowser',
     'sorl.thumbnail',
     'taggit',
     'blog',
@@ -95,6 +96,20 @@ TINYMCE_DEFAULT_CONFIG = {
 }
 TINYMCE_FILEBROWSER=False
 
+FILEBROWSER_VERSIONS_BASEDIR = '_versions'
+FILEBROWSER_VERSIONS = {
+  'admin_thumbnail': {'verbose_name': 'Admin Thumbnail', 'width': 60, 'height': 60, 'opts': 'crop'},
+  'thumbnail': {'verbose_name': 'Thumbnail (1 col)', 'width': 60, 'height': 60, 'opts': 'crop'},
+  'small': {'verbose_name': 'Small (2 col)', 'width': 140, 'height': '', 'opts': ''},
+  'medium': {'verbose_name': 'Medium (4col )', 'width': 300, 'height': '', 'opts': ''},
+  'big': {'verbose_name': 'Big (6 col)', 'width': 460, 'height': '', 'opts': ''},
+  'large': {'verbose_name': 'Large (8 col)', 'width': 680, 'height': '', 'opts': ''},
+}
+FILEBROWSER_ADMIN_VERSIONS = ['thumbnail', 'small', 'medium', 'big', 'large']
+FILEBROWSER_ADMIN_THUMBNAIL = 'admin_thumbnail'
+
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
@@ -121,11 +136,12 @@ TEMPLATE_DIRS = (
     os.path.join(PROJECT_PATH, "templates"),
 )
 STATICFILES_DIRS = (
-    # The docs say it should be absolute path: PROJECT_PATH is precisely one.
-    # Life is wonderful!
+     # The docs say it should be absolute path: PROJECT_PATH is precisely one.
+
+     # Life is wonderful!
+
    "/home/geroulia/workspace/adimas.info/static/",
 )
-
 LANGUAGES = [
     ('en', 'English'),
 ]
@@ -136,3 +152,4 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',
     'django.core.context_processors.static',
 )
+
