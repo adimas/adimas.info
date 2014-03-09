@@ -5,7 +5,7 @@ from blog.models import Post
 
 def blogs(request):
     posts = Post.objects.all().order_by('-created')[:5]
-    paginator = Paginator(posts, 2)
+    paginator = Paginator(posts, 4)
     try: page = int(request.GET.get("page", '1'))
     except ValueError: page = 1
     try:

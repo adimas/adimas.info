@@ -7,8 +7,7 @@ from filebrowser.base import FileObject
 
 class Post(models.Model):
     title = models.CharField(max_length=100)
-    #teaser_image = models.ImageField(upload_to='static/uploads', max_length=100,blank=True)
-    teaser_image = models.ImageField(u"Teaser image", max_length=250, upload_to='static/uploads', blank=True, null=True)
+    teaser_image = models.ImageField(u"Teaser image", max_length=250, upload_to='static/img/uploads', blank=True, null=True)
     teaser_content = models.TextField(max_length=500)
     content = models.TextField()
     created = models.DateTimeField()

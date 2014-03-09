@@ -1,22 +1,19 @@
 {% extends "base.html" %}
-{% load comments %}
-{% get_comment_count for post as comment_count %}
+<li>{% block nav-blog %}<a href="/blog/" class="active"><div>My Blog<br/><span>Tech News & Other</span></div></a>{% endblock %}</li>
 {% block content %}
-
-<h2>BLOG ENTRY</h2>
-
 {% if post %}
 	{% for blog_post in post %}
 	
 	<h2>{{blog_post.title}}</h2>
 	<p>{{blog_post.content|safe|linebreaks}}</p>
-
-	{% render_comment_form for blog_post %}  
-	
+		{% if blog_post.source_url %}
+		<p>Source URL: <a href="{{ blog_post.source_url}}" target="new">{{ blog_post.source_url}}</a></p>
+		{% endif %}
 	{% endfor %}
 {% else %}
     <p>No such blog post entry available.</p>
 {% endif %}
+
 
 
 

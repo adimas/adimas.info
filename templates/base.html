@@ -1,10 +1,9 @@
 {% load static %}
 
-
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
@@ -15,24 +14,58 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="stylesheet" href="/static/css/normalize.css">
         <link rel="stylesheet" href="/static/css/main.css">
+        <link rel="stylesheet" href="/static/css/style.css">
+        
        
         <script src="/static/js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
-
+        {% block header %}
+        <header>
+        <h1>Header</h1>
+        <div class="logo">LOGO</div>
+        <div class="search">
+		</div>
+        </header>
+        {% endblock %}
+ 		<div class="content content-width">
+ 		{% block nav %}
+        <nav class="main-menu">
+	        <ul>
+	            <li>{% block nav-profile %}<a href="/blog/"><div>Profile<br/><span>About Me</span></div></a>{% endblock %}</li>
+	            <li>{% block nav-resume %}<a href="/blog/"><div>Resume<br/><span>CV & Experience</span></div></a>{% endblock %}</li>
+	            <li>{% block nav-blog %}<a href="/blog/"><div>My Blog<br/><span>Tech News & Other</span></div></a>{% endblock %}</li>
+	            <li>{% block nav-projects %}<a href="/blog/"><div>Projects<br/><span>Portfolio</span></div></a>{% endblock %}</li>
+	            <li>{% block nav-resources %}<a href="/blog/"><div>Resourses<br/><span>Usefull links</span></div></a>{% endblock %}</li>
+	            <li>{% block nav-contact %}<a href="/blog/"><div>Get in Touch<br/><span>Contact info</span></div></a>{% endblock %}</li>
+	        </ul>
+	    </nav>
+        {% endblock %}
+        <div class="main-content">
 		{% block content %}
 		{% endblock %}
+		</div>
+		</div>
+	    {% block footer %}
+		<footer>
+		<h1>Footer</h1>
+		<div class="copyleft">
+		<p>Copyleft (ɔ) 2014-{% now "Y" %}.All Rights Reversed.Designed & Developed by Adonis Dimas</p>
+		</div>
+	    <div class="powered">
+		<p>HTML5/CSS3</p>
+		<p>Javascript/Jquery</p>
+		<p></p>
+		</div>
+		</footer>
+	    {% endblock %}
+		
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="/static/js/plugins.js"></script>
         <script src="/static/js/main.js"></script>
+        <script src="/static/js/html5shiv.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
@@ -45,6 +78,3 @@
         </script>
     </body>
 </html>
-
-
-

@@ -1,30 +1,41 @@
 {% extends "base.html" %}
+<li>{% block nav-blog %}<a href="/blog/" class="active"><div>My Blog<br/><span>Tech News & Other</span></div></a>{% endblock %}</li>
+
 {% block content %}
 {% load blog_tags %}
-<h2>BLOGS</h2>
 		{% for post in posts %}
-		<h2>{{post.title}}</h2>
+		<div class="post">
+		<h3><a href="/blog/post/{{post.id}}/">{{post.title}}</a></h3>
+		<div class="post-info"><h4>Posted on {{post.created|date:"d-m-Y"}} by {{post.author}} </div>
 		  {% if post.teaser_image %}
-		  	      <p><a href="/blog/post/{{post.id}}/"><img src="{% get_teaser_image post.teaser_image.path 'medium' %}/" /></a></p>
-		  {% endif %}		  
-		  <p>{{post.teaser_content|safe|linebreaks|urlizetrunc:15|truncatechars:30}}</p>
-		  <div class="read-me"><a href="/blog/post/{{post.id}}/">read more</a></div>
+		  	      <div class="teaser-image"><a href="/blog/post/{{post.id}}/"><img src="{% get_teaser_image post.teaser_image.path 'small' %}/" /></a></div>
+		          <div class="teaser-content">{{post.teaser_content|safe|linebreaks|urlizetrunc:15|truncatechars:300}}
+		  {% else %}
+		          <div class="teaser-content-no-image">{{post.teaser_content|safe|linebreaks|urlizetrunc:15|truncatechars:300}}
+          {% endif %}		  
+		  <div class="more"><a href="/blog/post/{{post.id}}/">read more</a></div>
+		  </div>
+		</div>
 		{% endfor %}
 
         <!-- Next/Prev page links  -->
         {% if posts.object_list and posts.paginator.num_pages > 1 %}
-        <div class="pagination" style="margin-top: 20px; margin-left: -20px; ">
+        <div class="page_links">
             <span class="step-links">
+            
                 {% if posts.has_previous %}
-                    <a href= "?page={{ posts.previous_page_number }}">newer entries &lt;&lt; </a>
+                 <span class="next_button">
+                    <a href= "?page={{ posts.previous_page_number }}"> &lt; newer posts  </a>
+                 </span>
                 {% endif %}
 
                 <span class="current">
                     &nbsp;Page {{ posts.number }} of {{ posts.paginator.num_pages }}
                 </span>
-
                 {% if posts.has_next %}
-                    <a href="?page={{ posts.next_page_number }}"> &gt;&gt; older entries</a>
+                 <span class="next_button">
+                    <a href="?page={{ posts.next_page_number }}"> older posts &gt;</a>
+                 </span>
                 {% endif %}
             </span>
         </div>

@@ -76,6 +76,7 @@ DATABASES = {
     }
 }
 
+
 TINYMCE_DEFAULT_CONFIG = {
     # General options
     'mode' : "textareas",

@@ -1,0 +1,467 @@
+/* ------------------------------------------------------------------------
+	Base Stylesheet: style.css for adimas.info website
+	Version : 0.1
+	Author : Adonis Dimas
+	Author URI : http://www.adimas.info/
+	Last Date Modified : 
+ -------------------------------------------------------------------------- */
+
+/* -----------------------------------------------------------------------------
+    R E S E T
+----------------------------------------------------------------------------- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ----------------------------------------------------------------------------
+    G E N E R A L
+----------------------------------------------------------------------------- */
+html {
+    overflow-y: scroll;
+}
+body {
+	font: 15px/24px Georgia, Serif;
+	color: #454545;
+	max-width: 1040px;
+	margin: 0 auto;
+}
+
+/* Links */
+a:link, a:visited {
+	text-decoration: none;
+	color: #147DB6;
+        outline: 0;
+}
+a:hover, a:focus, a:active {
+  color: #CC3300;
+  text-decoration: none;
+}
+.post a:hover{
+  text-decoration: underline;
+}
+
+a:link.more, a:visited.more {
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Sans-serif;
+   	float: left;
+	margin-top: 10px;
+	margin-right: 5px;
+	padding: 6px 10px;
+	border: 1px solid #2177A5;
+	background-color: #227bad;
+	color: #fff;
+    font-size: 13px;
+
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
+
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.3), inset 0 1px 0 #3CA5D2;
+    -moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.3), inset 0 1px 0 #3CA5D2;
+    -webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.3), inset 0 1px 0 #3CA5D2;
+}
+a:hover.more {
+	border:  1px  solid #B32D00;
+	background-color: #CC3300;
+
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.3), inset 0 1px 0 #FF7242;
+    -moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.3), inset 0 1px 0 #FF7242;
+    -webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.3), inset 0 1px 0 #FF7242;
+}
+
+/* Headers */
+h1, h2, h3, h4 {
+	font: bold 1em/1.5em Arial, Helvetica, Sans-Serif;
+    color: #353535;
+}
+h1 {
+    font-size: 38px;
+    line-height: 42px;
+    letter-spacing: -2px;
+}
+h2 {
+    font-size: 30px;
+    line-height: 38px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+h3 {
+    font-size: 22px;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+h4 { font-size: 14px; }
+
+
+/* Lists */
+ul, ol {
+	margin: 0 0 24px 0;
+	padding: 0 20px;
+}
+ul { list-style: disc; }
+ol { list-style: decimal; }
+
+dt {
+    font-weight: bold;
+    color: #1980AF;
+}
+dd {
+    padding-left: 20px;
+}
+
+p, dl { margin: 0; }
+
+blockquote {
+  	margin: 12px 0;
+  	padding: 40px 30px 20px 70px;
+  	border: 1px solid #E4E6E9;
+	background: #F3F4F5 url(../images/quote.png) no-repeat 20px 32px;
+  	font-size: 18px;
+  	line-height: 28px;
+  	font-style: italic;
+  	font-family: Georgia, 'Times New Roman', Times, Serif;
+  	color: #555;
+    overflow: hidden;
+}
+blockquote .author {
+    text-transform: uppercase;
+    font-style: normal;
+    letter-spacing: 1.5px;
+    text-align: right;
+    font-size: 12px;
+}
+code {
+    font-family: Consolas, 'Lucida Console', Monaco, Monospace;
+    font-size: 14px;
+    line-height: 1.5em;
+}
+pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+
+    margin: 0 0 24px 0;
+  	padding: 0 25px;
+  	display: block;
+    clear: both;
+  	border: 1px solid #E4E6E9;
+	background: #F3F4F5;
+}
+abbr[title], dfn[title] {
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+mark {
+    background-color: #FDD2B3;
+}
+strong, b {
+    font-weight: bold;
+}
+.no-border {
+    border: none;
+}
+
+/* Images */
+img {
+    background: #F3F4F5;
+    border: 1px solid #DEDFE0;
+	padding: 15px;
+
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+img.align-right { margin: 6px 0px 6px 15px; }
+img.align-left { margin: 6px 15px 6px 0px; }
+
+/* Table */
+table {
+	border-collapse: collapse;
+	margin: 12px 0 24px 0;
+}
+tr { background: #FFF; }
+th, td {
+	text-align: left;			
+	border-width: 1px;
+  	border-style: solid;
+}
+th {
+  	padding: .8em 1em;
+	background: #2C76A6;
+  	border-color: #308ABA #308ABA #246F97 #308ABA;
+	color: #fff;
+    font-family: Arial, Helvetica, Sans-serif;
+    font-size: 16px;
+	font-weight: bold;
+}
+td {
+	border-color: #E9E9E9;
+	padding: .7em 1em;
+}
+
+/* Form */
+form {
+    width: 500px;
+    margin: 24px 0 24px 0;
+    padding: 32px 40px;
+    background: #E9EAEB;
+    border: 1px solid #DFE1E6;
+
+}
+input, select {
+    vertical-align: middle;
+}
+form div {
+	border-bottom: 1px solid #D8DAE0;
+	padding: 12px 0 5px 0;	margin: 0;
+	color: #2C76A6;
+}
+form p {
+	color: #1980AF;
+}
+form label {
+    display: block;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Sans-Serif;
+    font-weight: bold;
+    line-height: 24px;
+    font-size: 13px;
+    margin: 0 0 5px 0;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 1);
+    color:#666666;
+}
+form label span {
+    color: #1980AF;
+}
+form input,
+form select,
+form textarea {
+    margin-bottom: 24px;
+	padding: 9px 10px;
+    color: #999;
+    background: #fff;
+	border-width: 1px;
+	border-style: solid;
+  	border-color: #DCDEE2 #E9EBED #E9EBED #DCDEE2;
+	font: 13px 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Sans-serif;
+}
+form textarea {
+    height: 325px;
+}
+form input:focus,
+form select:focus,
+form textarea:focus {
+	background: #EEF5F9;
+    color: #666666;
+}
+form input.button {
+   	height: 36px;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Sans-serif;
+   	margin-top: 10px;
+	margin-right: 3px;
+	padding: 6px 10px;
+	border: 1px solid #2177A5;
+	background-color: #227bad;
+    color: #fff;
+    cursor: pointer;
+
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
+
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.3), inset 0 1px 0 #3CA5D2;
+    -moz-box-shadow: 0px 1px 2px rgba(0,0,0,0.3), inset 0 1px 0 #3CA5D2;
+    -webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.3), inset 0 1px 0 #3CA5D2;
+}
+.ie7 form input.button {
+    padding: 0 2px;
+}
+#name, #email, #message, #website {
+	width: 475px;
+}
+
+/* Clearing and Alignment */
+.align-left {
+    float: left;
+}
+.align-right {
+    float: right;
+}
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+.ie7 .clearfix { zoom: 1; } /* IE7 */
+/******* Page Links *******/
+.page_links{
+	padding:30px 0px;
+}
+.page_links .current{
+	float:right;
+}
+.next_button{
+	float:left;
+}
+
+/* --------------------------------------------------------------------------
+    S T R U C T U R E
+--------------------------------------------------------------------------- */
+header {
+	height: 60px;
+	background-color: #356AA0;
+	padding: 40px;
+}
+.content-width {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.content {
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+footer {
+    clear: both;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Sans-Serif;
+    padding: 40px;
+    height:400px;
+    background-color:#EEEEEE;
+}
+/* --------------------------------------------------------------------------
+HEADER
+--------------------------------------------------------------------------- */
+header .logo{
+	float:left;
+}
+header .search{
+	float:right;
+}
+/* --------------------------------------------------------------------------
+CONTENT
+--------------------------------------------------------------------------- */
+
+
+.content .main-menu {
+	float: left;
+	border: 4px solid rgb(227, 227, 218);
+	width: 200px;
+	word-break: break-all;
+	text-align:center;
+	overflow:hidden
+}
+.content .main-menu ul{
+    background-color: #FFF;
+}
+.content .main-menu ul{
+	padding: 5px;
+	margin: 0;
+	position: relative;
+
+}
+.content .main-menu ul li a{
+	display: block;
+	font-size: 18px;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+	transition: all 1s ease 0s;
+	height: 20px;
+	vertical-align: middle;
+	padding: 20px;
+}
+.content .main-menu ul li a div{
+	position:relative;
+	bottom:10px;
+}
+.content .main-menu ul li a span{
+	display: block;
+	font-size: 13px;
+	line-height: 16px;
+	color:#000000;
+}
+
+.content .main-menu ul li a:hover, .content .main-menu ul li a:focus{
+        color: #FFFFFF!important;
+	background-color:#356AA0;
+}
+.content .main-menu ul li a.active{
+        color: #FFFFFF!important;
+	background-color:#356AA0;
+}
+.content .main-content {
+    float:right;
+    width:800px;
+    padding:20px 10px;
+}
+
+.content .main-content .teaser-image{
+	display: inline;
+	float: left;
+}
+.content .main-content .post{
+    overflow: hidden;
+    padding: 15px 0;
+}
+.content .main-content .post-info{
+	padding-bottom:5px;
+}
+.content .main-content .teaser-content{
+	width: 75%;
+	float: right;
+}
+.content .main-content .teaser-content-no-image{
+	width: 100%;
+}
+
